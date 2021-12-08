@@ -37,6 +37,7 @@ h1 {
     background-color: beige;
     justify-content: start;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .prev-page, .next-page {
@@ -70,19 +71,19 @@ h1 {
     max-width: 70%;
 }
 
-.photos .photo:nth-child(1) {
+.photos .photo:nth-child(4n + 1) {
     transform: rotate(-5deg);
 }
 
-.photos .photo:nth-child(2) {
+.photos .photo:nth-child(4n + 2) {
     transform: rotate(10deg);
 }
 
-.photos .photo:nth-child(3) {
+.photos .photo:nth-child(4n + 3) {
     transform: rotate(-15deg);
 }
 
-.photos .photo:nth-child(4) {
+.photos .photo:nth-child(4n + 4) {
     transform: rotate(5deg);
 }
 
@@ -92,8 +93,7 @@ h1 {
     margin: 25px;
 }
 
-.photo img {
-    position: relative;
+.photo img, .photo video {
     width: 100%;
     height: 100%;
 }
