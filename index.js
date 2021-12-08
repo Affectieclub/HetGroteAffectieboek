@@ -20,8 +20,8 @@ function showCurrentPage() {
 }
 
 function handleGesture() {
-    if (touchendX < touchstartX - 25) nextPage();
-    if (touchendX > touchstartX + 25) prevPage();
+    if (touchendX < touchstartX - 75) nextPage();
+    if (touchendX > touchstartX + 75) prevPage();
 }
 
 let touchstartX = 0;
