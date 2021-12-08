@@ -18,3 +18,20 @@ function nextPage() {
 function showCurrentPage() {
     document.querySelector('main').style.setProperty('transform', `translateX(-${page * 100}%)`);
 }
+
+function handleGesture() {
+    if (touchendX < touchstartX) nextPage();
+    if (touchendX > touchstartX) prevPage();
+}
+
+let touchstartX = 0;
+let touchendX = 0;
+
+document.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX
+});
+
+document.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX
+    handleGesture()
+});
